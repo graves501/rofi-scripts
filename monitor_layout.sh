@@ -61,6 +61,26 @@ do
     done
 done
 
+##
+# Triple screen options
+##
+for entry_a in $(seq 0 $((${NUM_MONITORS}-1)))
+do
+    for entry_b in $(seq 0 $((${NUM_MONITORS}-1)))
+    do
+        for entry_c in $(seq 0 $((${NUM_MONITORS}-1)))
+        do
+            if [ $entry_a != $entry_b ] && [ $entry_a != $entry_c ] && [ $entry_b != $entry_c ]
+            then
+                    TILES[$index]="Triple Screen ${MONITORS[$entry_a]} -> ${MONITORS[$entry_b]} -> ${MONITORS[$entry_c]}"
+                    COMMANDS[$index]="xrandr --output ${MONITORS[$entry_a]} --auto \
+                                    --output ${MONITORS[$entry_b]} --auto --left-of ${MONITORS[$entry_a]}"
+                    index+=1
+            fi
+        done
+    done
+done
+
 
 ##
 # Clone monitors
