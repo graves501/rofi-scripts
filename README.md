@@ -1,3 +1,10 @@
+# Keeping my fork up to date
+
+Run upstream.sh to set Luke's fork as remote
+
+For keeping it up to date:
+https://help.github.com/articles/syncing-a-fork/
+
 # Rofi based scripts
 
 
